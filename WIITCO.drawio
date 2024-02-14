@@ -1,0 +1,994 @@
+<mxfile host="Electron" modified="2024-02-14T13:52:11.483Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="E7k_lkgGPRiwLvNtq7rZ" version="23.0.2" type="device">
+  <diagram name="Page-1" id="a7904f86-f2b4-8e86-fa97-74104820619b">
+    <mxGraphModel dx="918" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="24794b860abc3c2d-27" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GAgeRating&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;category&amp;nbsp;= Int&lt;br&gt;rating = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;synopsis = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;ratingCoverUrl = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;descriptions = GAgeRatingDescription[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="840" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="24794b860abc3c2d-29" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;Game&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;ageRatings&amp;nbsp;= GAgeRating[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;rating = Float&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;reviewsCount = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;altNames = GAltName[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainSeries = GCollection? @relation&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainSeriesId = Int?&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;collections = GameCollection[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;cover = GCover?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;dlcs = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;dlcOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;dlcOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expandedEditions = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expandedFrom = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expandedFromId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expansions = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expansionOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;expansionOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;firstReleaseDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;localizations = GLocalization[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;follows = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainFranchise = GFranchise? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainFranchiseId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;franchises = GameFranchise[]&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0px 0px 0px 8px;&quot;&gt;developers = GCompany[]&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0px 0px 0px 8px;&quot;&gt;publishers = GCompany[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engines = GEngine[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;externalServices = GExternalService[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;modes = GModes[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genres = GGenre[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;hypes = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;languageSupports = GLanguageSupport[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;parentGameId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;playerPerspectives = GPlayerPerspective[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platforms = GPlatforms[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;ports = Games[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;portOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;portOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releaseDates = GReleaseDate[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remakes = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remakeOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remakeOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remasters = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remasterOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;remasterOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;screenshots = GScreenshot[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;videos = GVideo[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;similarGames = GameSimilarGame[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;standaloneDlcs = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;standaloneDlcOf = Game? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;standaloneDlcOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;status = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;summary = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;themes = GTheme[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;versions = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;versionOf = Game?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;versionOfId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;versionTitle = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;websites = GWebsite[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;htlbInfo = GHowLongToBeat?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;followedByUsers = UserFollowsGame[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="120" width="240" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-15" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GAgeRatingDescription&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;category&amp;nbsp;= Int&lt;br&gt;description = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;ageRating = GAgeRating @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;ageRatingId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="560" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-17" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.838;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.697;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-15" target="24794b860abc3c2d-27" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="700" y="190" as="sourcePoint" />
+            <mxPoint x="800" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-18" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.088;entryDx=0;entryDy=0;exitX=1;exitY=0.669;exitDx=0;exitDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="24794b860abc3c2d-27" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="990" y="410" as="sourcePoint" />
+            <mxPoint x="1090" y="310" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1140" y="107" />
+              <mxPoint x="1140" y="204" />
+              <mxPoint x="1160" y="204" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-19" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GAltName&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;comment = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="640" y="140" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-20" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.127;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.997;exitY=0.666;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-19" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1010" y="420" as="sourcePoint" />
+            <mxPoint x="1110" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="220" />
+              <mxPoint x="820" y="180" />
+              <mxPoint x="1120" y="180" />
+              <mxPoint x="1120" y="242" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-21" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GCollection&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainGames = Game[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;secondaryGames = GameCollection[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;type = GCollectionType? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;typeId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1720" width="210" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-22" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GCollectionType&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;description = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;collections = GCollection[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1960" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-24" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.005;entryY=0.669;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.679;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-21" target="X-3NSXI9Y4uWBQTwZuNT-22" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1810" y="410" as="sourcePoint" />
+            <mxPoint x="1910" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-25" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameCollection&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;collection = GCollection @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;collectionId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="110" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-28" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GCover&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alphaChannel = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;animated = Boolean&lt;br&gt;imageId = String&lt;br&gt;width = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;height = Int?&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="920" y="200" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-29" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GLocalization&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;region = GRegion? @Relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;regionId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="600" y="280" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-30" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GRegion&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;identifier = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;localizations = GLocalization[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="360" y="280" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-31" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.007;entryY=0.584;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.413;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-29" target="X-3NSXI9Y4uWBQTwZuNT-30" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="570.8" y="773.84" as="sourcePoint" />
+            <mxPoint x="310.00000000000006" y="670.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-32" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GMode&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2080" y="640" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-33" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameMode&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;mode = GMode @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;modeId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1880" y="640" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-34" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.683;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.565;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-33" target="X-3NSXI9Y4uWBQTwZuNT-32" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2400" y="950" as="sourcePoint" />
+            <mxPoint x="2390" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-36" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.004;exitY=0.158;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="24794b860abc3c2d-29" target="X-3NSXI9Y4uWBQTwZuNT-21" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1430" y="380" as="sourcePoint" />
+            <mxPoint x="1530" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1410" y="272" />
+              <mxPoint x="1410" y="85" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-42" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.205;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-28" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1110" y="430" as="sourcePoint" />
+            <mxPoint x="1210" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-47" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1160" y="344.84000000000003" as="sourcePoint" />
+            <mxPoint x="1160.7199999999998" y="332.36" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1130" y="345" />
+              <mxPoint x="1130" y="332" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-48" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="388" as="sourcePoint" />
+            <mxPoint x="1160" y="375" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="388" />
+              <mxPoint x="1129" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-49" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="431" as="sourcePoint" />
+            <mxPoint x="1160" y="418" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="431" />
+              <mxPoint x="1129" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-50" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="993" as="sourcePoint" />
+            <mxPoint x="1160" y="980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="993" />
+              <mxPoint x="1129" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-51" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="906.5" as="sourcePoint" />
+            <mxPoint x="1160" y="893.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="906.5" />
+              <mxPoint x="1129" y="893.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-52" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="823" as="sourcePoint" />
+            <mxPoint x="1160" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="823" />
+              <mxPoint x="1129" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-53" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="776.5" as="sourcePoint" />
+            <mxPoint x="1160" y="763.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="776.5" />
+              <mxPoint x="1129" y="763.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-54" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1159" y="720" as="sourcePoint" />
+            <mxPoint x="1160" y="707" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1129" y="720" />
+              <mxPoint x="1129" y="707" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-55" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GExternalService&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;countries = Int[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;media = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platform = GPlatform? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;url = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="880" y="399" width="200" height="211" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-56" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.491;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.996;exitY=0.698;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-55" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="890" y="610" as="sourcePoint" />
+            <mxPoint x="990" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-57" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GPlatform&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;abbreviation = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alternativeName = String?&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;generation = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformFamily = GPlatformFamily? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformFamilyId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformLogo = GPlatformLogo? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformLogoId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;summary = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releases = GReleaseDate[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;externalServices = GExternalService[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engines = GEngine[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1720" y="1120" width="280" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-58" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GPlatformFamily&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platforms = GPlatform[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="1120" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-59" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GPlatformLogo&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alphaChannel = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;animated = Boolean&lt;br&gt;imageId = String&lt;br&gt;width = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;height = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platforms = GPlatform[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="1260" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-60" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.002;entryY=0.658;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.001;exitY=0.431;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-57" target="X-3NSXI9Y4uWBQTwZuNT-58" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1790" y="1220" as="sourcePoint" />
+            <mxPoint x="1890" y="1120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2030" y="1258" />
+              <mxPoint x="2030" y="1199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-61" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1.001;exitY=0.519;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-57" target="X-3NSXI9Y4uWBQTwZuNT-59" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1790" y="1320" as="sourcePoint" />
+            <mxPoint x="1890" y="1220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2030" y="1286" />
+              <mxPoint x="2030" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-62" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=-0.004;exitY=0.539;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-55" target="X-3NSXI9Y4uWBQTwZuNT-57" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1090" y="910" as="sourcePoint" />
+            <mxPoint x="1520" y="1353" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="507" />
+              <mxPoint x="260" y="1360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-63" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.002;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.996;exitY=0.57;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-25" target="X-3NSXI9Y4uWBQTwZuNT-21" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1450" y="460" as="sourcePoint" />
+            <mxPoint x="1550" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-64" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1;entryY=0.189;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.004;exitY=0.35;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-25" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1439.76" y="401.44" as="sourcePoint" />
+            <mxPoint x="1420.0000000000002" y="290.00000000000006" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1420" y="152" />
+              <mxPoint x="1420" y="301" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-65" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GFranchise&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;mainGames = Game[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;secondaryGames = GameFranchise[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1720" y="200" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-66" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameFranchise&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;franchise = GFranchise @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;franchiseId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="300" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-67" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.997;exitY=0.402;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="24794b860abc3c2d-29" target="X-3NSXI9Y4uWBQTwZuNT-65" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1480" y="450" as="sourcePoint" />
+            <mxPoint x="1580" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1440" y="506" />
+              <mxPoint x="1440" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-68" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.335;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-66" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1380" y="480" as="sourcePoint" />
+            <mxPoint x="1480" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1450" y="340" />
+              <mxPoint x="1450" y="523" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-69" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.003;exitY=0.559;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-66" target="X-3NSXI9Y4uWBQTwZuNT-65" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1560" y="409" as="sourcePoint" />
+            <mxPoint x="1660" y="309" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-93" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GEngine&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;description = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;companies = GCompany[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;logo = GEngineLogo? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;logoId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platforms = GPlatform[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="2480" y="680" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-94" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GEngineLogo&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alphaChannel = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;animated = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;imageId = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;width = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;height = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engines = GEngine[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2720" y="860" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-97" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1.003;exitY=0.622;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-93" target="X-3NSXI9Y4uWBQTwZuNT-94" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2610" y="820" as="sourcePoint" />
+            <mxPoint x="2710" y="720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2700" y="804" />
+              <mxPoint x="2700" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-98" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameEngineCompany&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engine = GEngine @relation&lt;br&gt;engineId = Int&lt;br&gt;company = GCompany @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;companyId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2720" y="720" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-99" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameEnginePlatform&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engine = GEngine @relation&lt;br&gt;engineId = Int&lt;br&gt;platform = GPlatform @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2240" y="1000" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-100" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-99" target="X-3NSXI9Y4uWBQTwZuNT-93" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2500" y="1040" as="sourcePoint" />
+            <mxPoint x="2250" y="870" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2460" y="1060" />
+              <mxPoint x="2460" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-101" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.997;entryY=0.798;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-99" target="X-3NSXI9Y4uWBQTwZuNT-57" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2020" y="1430" as="sourcePoint" />
+            <mxPoint x="1830" y="1530" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2220" y="1060" />
+              <mxPoint x="2220" y="1440" />
+              <mxPoint x="2020" y="1440" />
+              <mxPoint x="2020" y="1375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-102" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameEngine&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engine = GEngine @relation&lt;br&gt;engineId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="570" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-103" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-102" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2170" y="730" as="sourcePoint" />
+            <mxPoint x="2480" y="780" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2260" y="630" />
+              <mxPoint x="2260" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-104" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.997;entryY=0.465;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-102" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1650" y="760" as="sourcePoint" />
+            <mxPoint x="1750" y="660" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1470" y="630" />
+              <mxPoint x="1470" y="566" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-105" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.997;entryY=0.567;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-98" target="X-3NSXI9Y4uWBQTwZuNT-93" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2320" y="960" as="sourcePoint" />
+            <mxPoint x="2420" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-106" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GCompany&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;startDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;startDateCategory = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;changeDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;changeDateCategory = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;oldCompany = GCompany?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;newCompany = GCompany? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;newCompanyId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;country = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;description = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;developedGames = GameDeveloper[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;publishedGames = GamePublisher[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;logo = GCompanyLogo?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;logoId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;childCompanies = GCompany[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;parentCompany = GCompany? @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;parentCompanyId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;engines = GEngine[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="2280.95" y="280" width="280" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-107" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GCompanyLogo&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alphaChannel = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;animated = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;imageId = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;width = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;height = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;companies = GCompany[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2600.95" y="280" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-108" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.998;exitY=0.669;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-106" target="X-3NSXI9Y4uWBQTwZuNT-107" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2600.95" y="680" as="sourcePoint" />
+            <mxPoint x="2700.95" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-109" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.864;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-98" target="X-3NSXI9Y4uWBQTwZuNT-106" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2830" y="630" as="sourcePoint" />
+            <mxPoint x="2590" y="590" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2940" y="780" />
+              <mxPoint x="2940" y="591" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-110" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2279.95" y="432" as="sourcePoint" />
+            <mxPoint x="2280.95" y="419" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2249.95" y="432" />
+              <mxPoint x="2249.95" y="419" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-111" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.216;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2279.95" y="557" as="sourcePoint" />
+            <mxPoint x="2280.95" y="544" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2249.95" y="557" />
+              <mxPoint x="2249.95" y="544" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-112" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameDeveloper&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;developer = GCompany @relation&lt;br&gt;developerId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2000" y="350" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-113" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GamePublisher&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;publisher = GCompany @relation&lt;br&gt;publisherId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2000" y="490" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-114" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.003;entryY=0.575;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-112" target="X-3NSXI9Y4uWBQTwZuNT-106" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2220" y="610" as="sourcePoint" />
+            <mxPoint x="2320" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2220" y="410" />
+              <mxPoint x="2220" y="487" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-115" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.003;entryY=0.615;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-113" target="X-3NSXI9Y4uWBQTwZuNT-106" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2600" y="730" as="sourcePoint" />
+            <mxPoint x="2700" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2220" y="550" />
+              <mxPoint x="2220" y="501" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-116" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.997;entryY=0.436;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-112" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2090" y="600" as="sourcePoint" />
+            <mxPoint x="2190" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1980" y="410" />
+              <mxPoint x="1980" y="539" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-117" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-113" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1470" y="720" as="sourcePoint" />
+            <mxPoint x="1400" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-119" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.004;entryY=0.371;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.622;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-29" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="740" y="720" as="sourcePoint" />
+            <mxPoint x="840" y="620" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1120" y="380" />
+              <mxPoint x="1120" y="476" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-120" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.001;entryY=0.49;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-33" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1470" y="920" as="sourcePoint" />
+            <mxPoint x="1570" y="820" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1460" y="700" />
+              <mxPoint x="1460" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-121" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="720" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-122" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;genre = GGenre @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genreId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="720" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-123" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.001;entryY=0.669;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-122" target="X-3NSXI9Y4uWBQTwZuNT-121" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1380" y="880" as="sourcePoint" />
+            <mxPoint x="1480" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-124" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.002;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-122" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1510" y="940" as="sourcePoint" />
+            <mxPoint x="1610" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1450" y="780" />
+              <mxPoint x="1450" y="609" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-125" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GLanguageSupport&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;language = GLanguage @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;languageId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;supportType = GLanguageSupportType @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;supportTypeId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="560" y="530" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-126" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GLanguage&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;nativeName = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;locale = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;supports = GLanguageSupport[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="280" y="530" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-127" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.001;entryY=0.592;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-125" target="X-3NSXI9Y4uWBQTwZuNT-126" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="580" y="1020" as="sourcePoint" />
+            <mxPoint x="680" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-128" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GLanguageSupportType&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;supports = GLanguageSupports[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="320" y="710" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-129" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.001;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.004;exitY=0.617;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-125" target="X-3NSXI9Y4uWBQTwZuNT-128" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="710" y="1090" as="sourcePoint" />
+            <mxPoint x="650" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-130" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.003;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-125" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="950" y="750" as="sourcePoint" />
+            <mxPoint x="1050" y="650" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="860" y="580" />
+              <mxPoint x="860" y="648" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-131" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GPlayerPerspective&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="880" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-132" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GamePlayerPerspective&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;perspective = GPlayerPerspetive @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;perspectiveId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1760" y="880" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-133" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.004;entryY=0.674;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-132" target="X-3NSXI9Y4uWBQTwZuNT-131" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1620" y="1050" as="sourcePoint" />
+            <mxPoint x="1720" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-134" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.004;entryY=0.583;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-132" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1660" y="1010" as="sourcePoint" />
+            <mxPoint x="1760" y="910" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1740" y="940" />
+              <mxPoint x="1740" y="860" />
+              <mxPoint x="1440" y="860" />
+              <mxPoint x="1440" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-135" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GamePlatform&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;platform = GPlatform @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="880" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-136" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=1.004;entryY=0.596;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-135" edge="1" target="24794b860abc3c2d-29">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1490" y="1150" as="sourcePoint" />
+            <mxPoint x="1420" y="720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1420" y="940" />
+              <mxPoint x="1420" y="692" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-137" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.001;entryY=0.643;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-135" target="X-3NSXI9Y4uWBQTwZuNT-57" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1450" y="1050" as="sourcePoint" />
+            <mxPoint x="1310" y="1220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1700" y="940" />
+              <mxPoint x="1700" y="1326" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-139" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GReleaseDate&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @Relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;date = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;human = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;m = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;y = Int?&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0px 0px 0px 8px;&quot;&gt;status = GReleaseDateStatus? @relation&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0px 0px 0px 8px;&quot;&gt;statusId = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platform = GPlatform @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;platformId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;region = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="640" y="760" width="240" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-140" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GReleaseDateStatus&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;description = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releases = GReleaseDate[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="400" y="860" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-141" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.002;entryY=0.689;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.003;exitY=0.536;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-139" target="X-3NSXI9Y4uWBQTwZuNT-140" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="680" y="1300" as="sourcePoint" />
+            <mxPoint x="710" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-142" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.003;entryY=0.655;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-139" edge="1" target="24794b860abc3c2d-29">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="910" y="1010" as="sourcePoint" />
+            <mxPoint x="1160" y="732" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="900" y="830" />
+              <mxPoint x="900" y="749" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-143" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.003;entryY=0.689;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.003;exitY=0.637;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-139" target="X-3NSXI9Y4uWBQTwZuNT-57" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1030" y="1300" as="sourcePoint" />
+            <mxPoint x="1130" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-145" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GScreenshot&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;alphaChannel = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;animated = Boolean&lt;br&gt;imageId = String&lt;br&gt;width = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;height = Int?&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="920" y="760" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-146" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.761;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-145" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="840" y="1180" as="sourcePoint" />
+            <mxPoint x="1150" y="850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1090" y="880" />
+              <mxPoint x="1090" y="851" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-147" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GVideo&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;name = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;videoId = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="920" y="960" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-148" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.003;entryY=0.776;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.002;exitY=0.557;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-147" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="960" y="1240" as="sourcePoint" />
+            <mxPoint x="1060" y="1140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="1027" />
+              <mxPoint x="1100" y="865" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-149" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameSimilarGame&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;similar = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;similarId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1080" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-150" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.79;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-149" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1110" y="1260" as="sourcePoint" />
+            <mxPoint x="1210" y="1160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1120" y="1140" />
+              <mxPoint x="1120" y="878" />
+              <mxPoint x="1160" y="878" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-151" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GTheme&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;slug = String @unique&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = Game[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;updatedAt = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="1180" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-152" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GameTheme&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;br&gt;gameId = Int&lt;br&gt;theme = GTheme @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;themeId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="1040" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-153" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.997;entryY=0.883;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-152" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1220" y="1260" as="sourcePoint" />
+            <mxPoint x="1430" y="1030" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1420" y="1100" />
+              <mxPoint x="1420" y="968" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-154" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.995;entryY=0.68;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-152" target="X-3NSXI9Y4uWBQTwZuNT-151" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1320" y="1320" as="sourcePoint" />
+            <mxPoint x="1420" y="1220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1660" y="1100" />
+              <mxPoint x="1660" y="1262" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-155" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;GWebsite&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;category = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;url = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;trusted = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;gameId = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;checksum = String @unique&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="920" y="1160" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-156" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.956;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.002;exitY=0.589;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="X-3NSXI9Y4uWBQTwZuNT-155" target="24794b860abc3c2d-29" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1120" y="1370" as="sourcePoint" />
+            <mxPoint x="1220" y="1270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1130" y="1254" />
+              <mxPoint x="1130" y="1038" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X-3NSXI9Y4uWBQTwZuNT-157" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;User&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;sub = String @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;games = UserFollowsGame[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movies = UserFollowsMovie[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;televisionShows = UserFollowsTVShow[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;cinemaPeople = UserFollowsCinemaPerson[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1400" y="1800" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Sl6tDL18Ha3tIHxLW4XA-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;Movie&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;originalLanguage = String?&lt;br&gt;originalTitle = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;title = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;posterPath = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;popularity = Float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;runtime = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;budget = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;primaryReleaseDate = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;followedByUsers = UserFollowsMovie[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releaseCountries = MReleaseCountry[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genres = MovieGenre[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;productionCountries = MovieCountry[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;actors = MovieActor[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;directors = MovieDirector[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="2400" width="280" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Sl6tDL18Ha3tIHxLW4XA-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShow&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genres = TVShowGenre[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;episodeRunTimes = Int[]&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;firstAirDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;lastAirDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;inProduction = Boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;languages = String[]&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0px 0px 0px 8px;&quot;&gt;creators = TVShowCreator[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;networks = TVShowNetwork[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;originalLanguage = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;originalName = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;popularity = Float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;posterPath = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;followedByUsers = UserFollowsTVShow[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;seasons = TVSeason[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;originCountries = TVShowOrigCountry[]&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;productionCountries = TVShowProdCountry[]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;status = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;type = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;voteAverage = Float&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2320" y="2400" width="280" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Sl6tDL18Ha3tIHxLW4XA-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movies = MovieGenre[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="2340" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Sl6tDL18Ha3tIHxLW4XA-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MovieGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;br&gt;movieId = Int&lt;br&gt;genre = MGenre @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genreId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="2440" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MReleaseCountry&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;iso31661&amp;nbsp;= String&lt;br&gt;localReleases = MLocalRelease[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movieId = Int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1040" y="2520" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MLocalRelease&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;note = String?&lt;br&gt;releaseDate = DateTime&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;type = Int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releaseCountry = MReleaseCountry @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;releaseCountryId = Int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="720" y="2520" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;CinemaPerson&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;followedByUsers = UserFollowsCinemaPerson[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;actedMovies = MovieActor[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;directedMovies = MovieDirector[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;createdTV = TVShowCreator[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="2660" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MovieActor&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;br&gt;movieId = Int&lt;br&gt;actor = Person @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;actorId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="2600" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-7" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MovieDirector&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;br&gt;movieId = Int&lt;br&gt;director = Person @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;directorId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="2760" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-8" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.003;entryY=0.847;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-6" target="Sl6tDL18Ha3tIHxLW4XA-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1090" y="2850" as="sourcePoint" />
+            <mxPoint x="1190" y="2750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1260" y="2740" />
+              <mxPoint x="1260" y="2612" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-9" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.728;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-2" target="Sl6tDL18Ha3tIHxLW4XA-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="940" y="2770" as="sourcePoint" />
+            <mxPoint x="1040" y="2670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-10" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-3" target="sJzjWuu-l0k4soKxFeOH-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="860" y="2820" as="sourcePoint" />
+            <mxPoint x="960" y="2720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-11" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Sl6tDL18Ha3tIHxLW4XA-5" target="Sl6tDL18Ha3tIHxLW4XA-3" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1490" y="2800" as="sourcePoint" />
+            <mxPoint x="1590" y="2700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1780" y="2500" />
+              <mxPoint x="1780" y="2380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-12" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.005;entryY=0.623;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-6" target="sJzjWuu-l0k4soKxFeOH-5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1470" y="2870" as="sourcePoint" />
+            <mxPoint x="1570" y="2770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-13" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-7" target="sJzjWuu-l0k4soKxFeOH-5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1460" y="2980" as="sourcePoint" />
+            <mxPoint x="1560" y="2880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-14" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.002;entryY=0.794;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="Sl6tDL18Ha3tIHxLW4XA-5" target="Sl6tDL18Ha3tIHxLW4XA-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1440" y="2850" as="sourcePoint" />
+            <mxPoint x="1590" y="2570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-15" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.999;entryY=0.912;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-6" target="Sl6tDL18Ha3tIHxLW4XA-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1500" y="2830" as="sourcePoint" />
+            <mxPoint x="1600" y="2730" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1590" y="2660" />
+              <mxPoint x="1590" y="2628" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sJzjWuu-l0k4soKxFeOH-16" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.002;entryY=0.961;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sJzjWuu-l0k4soKxFeOH-7" target="Sl6tDL18Ha3tIHxLW4XA-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1430" y="2880" as="sourcePoint" />
+            <mxPoint x="1550" y="2700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1580" y="2820" />
+              <mxPoint x="1580" y="2640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;shows = TVShowGenre[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="2340" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShowCreator&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;br&gt;showId = Int&lt;br&gt;creator = Person @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;creatorId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="2680" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-3" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;startSize=8;endSize=8;entryX=0.004;entryY=0.428;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="JCmdP2qzGL3vnczjWDyc-2" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2220" y="2590" as="sourcePoint" />
+            <mxPoint x="2320" y="2490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2290" y="2740" />
+              <mxPoint x="2290" y="2554" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShowGenre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;br&gt;showId = Int&lt;br&gt;genre = MGenre @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;genreId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="2440" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-6" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;startSize=8;endSize=8;entryX=0;entryY=0.192;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="JCmdP2qzGL3vnczjWDyc-5" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2170" y="2500" as="sourcePoint" />
+            <mxPoint x="2270" y="2400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-7" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="JCmdP2qzGL3vnczjWDyc-5" target="JCmdP2qzGL3vnczjWDyc-1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2150" y="2710" as="sourcePoint" />
+            <mxPoint x="2250" y="2610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2100" y="2500" />
+              <mxPoint x="2100" y="2380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-8" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVNetwork&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;name = String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;logoPath = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;shows = TVShowNetwork[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="2850" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-9" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShowNetwork&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;br&gt;showId = Int&lt;br&gt;network = TVNetwork @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;networkId = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2080" y="2840" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-10" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="JCmdP2qzGL3vnczjWDyc-9" target="JCmdP2qzGL3vnczjWDyc-8" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1840" y="3070" as="sourcePoint" />
+            <mxPoint x="1940" y="2970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JCmdP2qzGL3vnczjWDyc-11" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;startSize=8;endSize=8;entryX=0;entryY=0.472;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="JCmdP2qzGL3vnczjWDyc-9" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2250" y="2940" as="sourcePoint" />
+            <mxPoint x="2350" y="2840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVSeason&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;name = String&lt;br&gt;seasonNumber = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;posterPath = String?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;airDate = DateTime?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;episodeCount = Int?&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;voteAverage = Float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;showId = Int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="2640" y="2470" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-4" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.999;entryY=0.716;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-3" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2450" y="2910" as="sourcePoint" />
+            <mxPoint x="2550" y="2810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2630" y="2555" />
+              <mxPoint x="2630" y="2658" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;CinemaCountry&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;id = Int @id&lt;br&gt;iso31661 = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;englishName = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;nativeName = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movies = MovieCountry[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;showsProduced = TVShowProdCountry[]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;showsOriginated = TVShowOrigCountry[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="3000" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;MovieCountry&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;br&gt;movieId = Int&lt;br&gt;country = CinemaCountry @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;countryIso = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="2680" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-7" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-6" target="xYNLBoQ0MKmKb_Zt-Tku-5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1500" y="3250" as="sourcePoint" />
+            <mxPoint x="1600" y="3150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1500" y="2740" />
+              <mxPoint x="1500" y="3070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-8" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShowProdCountry&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;br&gt;showId = Int&lt;br&gt;country = CinemaCountry @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;countryIso = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2400" y="2950" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-9" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.004;entryY=0.804;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-8" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2690" y="2950" as="sourcePoint" />
+            <mxPoint x="2790" y="2850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2620" y="3010" />
+              <mxPoint x="2620" y="2690" />
+              <mxPoint x="2601" y="2690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-10" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-8" target="xYNLBoQ0MKmKb_Zt-Tku-5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2390" y="2870" as="sourcePoint" />
+            <mxPoint x="2120" y="3105" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2380" y="3010" />
+              <mxPoint x="2380" y="3105" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-11" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;TVShowOrigCountry&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;br&gt;showId = Int&lt;br&gt;country = CinemaCountry @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;countryIso = Int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="2400" y="3090" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-12" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-11" target="Sl6tDL18Ha3tIHxLW4XA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2630" y="3110" as="sourcePoint" />
+            <mxPoint x="2620" y="2660" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2630" y="3150" />
+              <mxPoint x="2630" y="2670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xYNLBoQ0MKmKb_Zt-Tku-13" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.996;entryY=0.905;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="xYNLBoQ0MKmKb_Zt-Tku-11" target="xYNLBoQ0MKmKb_Zt-Tku-5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2190" y="3260" as="sourcePoint" />
+            <mxPoint x="2119.7599999999998" y="3126.5600000000004" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2380" y="3150" />
+              <mxPoint x="2380" y="3127" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-1" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;&lt;u&gt;UserFollowsGame&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;user = User @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;userSub = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;game&amp;nbsp; = Game @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;gameId = Int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1480" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-2" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.987;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-1" target="24794b860abc3c2d-29">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="900" y="1600" as="sourcePoint" />
+            <mxPoint x="1190" y="1290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1140" y="1540" />
+              <mxPoint x="1140" y="1067" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-3" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.001;entryY=0.422;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-1" target="X-3NSXI9Y4uWBQTwZuNT-157">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1260" y="1780" as="sourcePoint" />
+            <mxPoint x="1360" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-5" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;&lt;u&gt;UserFollowsMovie&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;user = User @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;userSub = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;movie = Movie @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;movieId = Int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="2160" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-6" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.559;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-5" target="X-3NSXI9Y4uWBQTwZuNT-157">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1280" y="2220" as="sourcePoint" />
+            <mxPoint x="1380" y="2120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1380" y="2220" />
+              <mxPoint x="1380" y="1867" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-7" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.004;entryY=0.675;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-5" target="Sl6tDL18Ha3tIHxLW4XA-1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1060" y="2400" as="sourcePoint" />
+            <mxPoint x="1160" y="2300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1180" y="2220" />
+              <mxPoint x="1180" y="2300" />
+              <mxPoint x="1260" y="2300" />
+              <mxPoint x="1260" y="2569" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-8" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;&lt;u&gt;UserFollowsCinemaPerson&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;user = User @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;userSub = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;person = CinemaPerson @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;personId = Int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="2160" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-10" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1;entryY=0.854;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="JCmdP2qzGL3vnczjWDyc-2" target="sJzjWuu-l0k4soKxFeOH-5">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1980" y="2890" as="sourcePoint" />
+            <mxPoint x="2080" y="2790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2110" y="2740" />
+              <mxPoint x="2110" y="2771" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-11" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1;entryY=0.54;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-8" target="sJzjWuu-l0k4soKxFeOH-5">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1920" y="2580" as="sourcePoint" />
+            <mxPoint x="2020" y="2480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-12" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.998;entryY=0.822;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-8" target="X-3NSXI9Y4uWBQTwZuNT-157">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1720" y="2090" as="sourcePoint" />
+            <mxPoint x="1820" y="1990" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1860" y="2220" />
+              <mxPoint x="1860" y="1899" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-13" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;&lt;u&gt;UserFollowsTVShow&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;user = User @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;userSub = String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;show = TVShow @relation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;showId = Int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;@@id&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="2160" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-14" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.002;entryY=0.701;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-13" target="X-3NSXI9Y4uWBQTwZuNT-157">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2200" y="2320" as="sourcePoint" />
+            <mxPoint x="1820" y="1890" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2320" y="2220" />
+              <mxPoint x="2320" y="1884" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ttvz6itOL-FLGFajlbWT-15" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.002;entryY=0.674;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.998;exitY=0.444;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ttvz6itOL-FLGFajlbWT-13" target="Sl6tDL18Ha3tIHxLW4XA-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="2470" y="2440" as="sourcePoint" />
+            <mxPoint x="2570" y="2340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2620" y="2213" />
+              <mxPoint x="2620" y="2643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
